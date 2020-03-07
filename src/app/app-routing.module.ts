@@ -1,15 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { Page2Component } from './page2/page2.component';
-import { Page1Component } from './page1/page1.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TablesComponent } from './tables/tables.component';
+import { ChartsComponent } from './charts/charts.component';
+import { ColorComponent } from './utilites/color/color.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
-  { path: 'page1', component: Page1Component },
-  { path: 'page2', component: Page2Component },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'tables', component: TablesComponent },
+  { path: 'charts', component: ChartsComponent },
+  {
+    path: 'utilities',
+    children: [
+      { path: 'color', component: ColorComponent }
+    ]
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
