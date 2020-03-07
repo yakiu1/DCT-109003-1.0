@@ -11,7 +11,7 @@ export class ChartsComponent implements OnInit {
   counter = 0;
   snapShotCounter = 0;
   constructor(private router: Router, private activedRoute: ActivatedRoute) {
-    this.activedRoute.paramMap.subscribe(p => {
+    this.activedRoute.queryParamMap.subscribe(p => {
       this.counter = +p.get('type');
     });
   }
@@ -21,8 +21,14 @@ export class ChartsComponent implements OnInit {
   }
 
   plusOne() {
-    this.counter = this.counter + 1;
-    this.router.navigateByUrl('charts/' + this.counter);
+    // this.counter = this.counter + 1;
+    // this.router.navigateByUrl('charts/' + this.counter);
+    this.router.navigate(['charts'], {
+      queryParams: {
+        type: this.counter + 1
+
+      }
+    });
   }
 
 }

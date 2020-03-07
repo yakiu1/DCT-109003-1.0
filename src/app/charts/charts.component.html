@@ -1,6 +1,10 @@
-<button (click)="plusOne()">+1</button>
+<button [routerLink]="['/charts']" [queryParams]="{type: counter+1}" routerLinkActive="router-link-active">+1</button>
 
 {{counter}}
 
 
 {{snapShotCounter}}
+<div style="background-color: blue;" class=" row">
+  <button (click)="plusOne()">+1</button>
+
+</div>
