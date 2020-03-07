@@ -8,8 +8,8 @@ import { ChartsComponent } from './charts/charts.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'tables', component: TablesComponent },
   { path: 'charts', component: ChartsComponent },
+  { path: 'tables', loadChildren: () => import('./tables/tables.module').then(m => m.TablesModule) },
   { path: 'utilities', loadChildren: () => import('./utilities/utilities.module').then(m => m.UtilitiesModule) },
   { path: '**', component: NotFoundComponent }
 ];
