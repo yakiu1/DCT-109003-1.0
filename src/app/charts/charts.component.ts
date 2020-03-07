@@ -9,16 +9,15 @@ import { Router, ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router'
 export class ChartsComponent implements OnInit {
 
   counter = 0;
+  snapShotCounter = 0;
   constructor(private router: Router, private activedRoute: ActivatedRoute) {
-
     this.activedRoute.paramMap.subscribe(p => {
       this.counter = +p.get('type');
     });
-
-
   }
 
   ngOnInit(): void {
+    this.snapShotCounter = +this.activedRoute.snapshot.paramMap.get('type');
   }
 
   plusOne() {
