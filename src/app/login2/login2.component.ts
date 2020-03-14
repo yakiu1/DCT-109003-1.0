@@ -16,7 +16,7 @@ export class Login2Component implements OnInit {
     } else {
       return {
         twoAt: false
-      }
+      };
     }
   }
 
@@ -29,6 +29,13 @@ export class Login2Component implements OnInit {
       password: ['0988888888', [Validators.minLength(6), Validators.maxLength(15), Validators.required, this.twoAtValidator]],
       isRemember: [true]
     });
+    // this.form = this.fb.group({
+    //  email: this.fb.control(['a3000032000@hotmail.com', [Validators.required, Validators.email]]),
+    //   password: this.fb.control(
+    //     ['0988888888',
+    //     [Validators.minLength(6), Validators.maxLength(15),Validators.required, this.twoAtValidator]]),
+    //   isRemember: [true]
+    // });
   }
 
   doSubmit(hoho: FormGroupDirective) {

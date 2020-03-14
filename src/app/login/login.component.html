@@ -30,7 +30,7 @@
                   <div *ngIf="tEmail.errors?.email">請輸入正確的Email格式</div>
                   <div *ngIf="tEmail.errors?.required ">請輸入Email</div>
                   <div class="form-group">
-                    <input name="password" type="password" [(ngModel)]="data.password"
+                    <input name="password" #tPassword="ngModel" [class.is-invalid]="tPassword.invalid" app-twoat type="password" [(ngModel)]="data.password"
                       class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                   </div>
                   <div class="form-group">

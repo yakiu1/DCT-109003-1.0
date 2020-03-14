@@ -11,6 +11,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { Login2Component } from './login2/login2.component';
+import { TwoAtValidator } from './two-at.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Login2Component } from './login2/login2.component';
     ChartsComponent,
     LayoutComponent,
     LoginComponent,
-    Login2Component
+    Login2Component,
+    TwoAtValidator
   ],
   imports: [
     BrowserModule,
