@@ -15,16 +15,16 @@
                 <pre>
 {{form.get('email').valid}}
                 </pre>
-                <form [formGroup]="form" #tForm="ngForm" class="user" (submit)="doSubmit()">
+                <form [formGroup]="form" #tForm="ngForm" class="user" (submit)="doSubmit(tForm)">
                   <div class="form-group">
                     <input formControlName="email" [class.is-invalid]="tForm.submitted && form.get('email').invalid"
                       type="email" class="form-control form-control-user" id="exampleInputEmail"
                       aria-describedby="emailHelp" placeholder="Enter Email Address...">
                   </div>
                   <div class="form-group">
-                    <input formControlName="password" [class.is-invalid]="tForm.submitted && form.get('password').invalid"
-                      type="password" class="form-control form-control-user" id="exampleInputPassword"
-                      placeholder="Password">
+                    <input formControlName="password"
+                      [class.is-invalid]="tForm.submitted && form.get('password').invalid" type="password"
+                      class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                   </div>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox small">
