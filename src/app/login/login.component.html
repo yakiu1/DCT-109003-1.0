@@ -22,13 +22,13 @@
                 form.submitted = {{ form.submitted}}
                 <form class="user" #form="ngForm" (ngSubmit)="doSubmit(form)">
                   <div class="form-group">
-                    <input [class.is-invalid]="tEmail.errors?.email && isFieldValid(tEmail)" required name="first" email
+                    <input [class.is-invalid]="isFieldValid(tEmail)" required name="first" email
                       ngModel #tEmail="ngModel" type="email" class="form-control form-control-user"
                       [(ngModel)]="data.email" id="exampleInputEmail" aria-describedby="emailHelp"
                       placeholder="Enter Email Address...">
                   </div>
-                  <div *ngIf="tEmail.errors?.email && isFieldValid(tEmail)">請輸入正確的Email格式</div>
-                  <div *ngIf="tEmail.errors?.required && isFieldValid(tEmail)">請輸入Email</div>
+                  <div *ngIf="tEmail.errors?.email">請輸入正確的Email格式</div>
+                  <div *ngIf="tEmail.errors?.required ">請輸入Email</div>
                   <div class="form-group">
                     <input name="password" type="password" [(ngModel)]="data.password"
                       class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">

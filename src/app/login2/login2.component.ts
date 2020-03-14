@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login2',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login2.component.css']
 })
 export class Login2Component implements OnInit {
+  form: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      email: 'a3000032000@hotmail.com',
+      password: '0988888888',
+      isRemember: true
+    });
   }
 
 }

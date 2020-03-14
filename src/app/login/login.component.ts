@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   isFieldValid(control: NgModel) {
+    console.log(control.formDirective);
     return control.formDirective.submited && control.invalid;
   }
 }
