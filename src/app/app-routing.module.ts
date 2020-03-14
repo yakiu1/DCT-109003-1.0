@@ -6,6 +6,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { Login2Component } from './login2/login2.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'utilities', loadChildren: () => import('./utilities/utilities.module').then(m => m.UtilitiesModule) }
     ], canActivate: [AuthGuard]
   },
+  { path: 'login2', component: Login2Component },
   { path: 'login', component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];

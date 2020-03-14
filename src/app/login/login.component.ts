@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { getMaxListeners } from 'cluster';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -23,5 +23,9 @@ export class LoginComponent implements OnInit {
     if (form.valid) {
 
     }
+  }
+
+  isFieldValid(control: NgModel) {
+    return control.formDirective.submited && control.invalid;
   }
 }
